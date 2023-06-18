@@ -1,6 +1,6 @@
 # Arducam Time of Flight Camera for 3d object segmentation
- 3d object segmentation with arducam time of flight
-
+ 3d object segmentation with arducam time of flight<br>
+ Youtube video is here:<br>
  https://youtu.be/yHB2iq8TIqI
 
 This project combines an Arducam Time of flight depth camera with an esp32-cam to do 3-dimensional segmentation and distance estimation. I've used a raspberry pi 4B to capture and process the images from the depth and the esp32-cam. <br>
