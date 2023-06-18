@@ -244,7 +244,8 @@ if __name__ == "__main__":
     URL_cam = "http://192.168.1.181"
 
     fl = 2.043636363636363
-    tantheta = 0.71#648732789907391
+    #adjust tantheta to shift either way.
+    tantheta = 0.51#648732789907391
     dc = 4.0 #cm distance between cameras
     set_resolution(URL_cam, index=5)
     cap_esp32 = cv2.VideoCapture(URL_cam + ":81/stream")
@@ -261,7 +262,7 @@ if __name__ == "__main__":
             
             xx = frame_esp32.shape[1]
             yy = frame_esp32.shape[0]
-            print(xx, yy)
+            #print(xx, yy)
 
 
 
@@ -290,7 +291,7 @@ if __name__ == "__main__":
             lbls,stats,segmentation_masks = get_segemntation(clustered_image, cluster_centers)
             
             distance = ((255.0-np.array(lbls))*400.0/255.0)#-2.0) #add 0.001 to hack divide by zero error
-            P = (xx*dc/(2*tantheta))/distance
+            P = (240*dc/(2*tantheta))/distance
     
             cv2.imshow("preview",clustered_image)
             
